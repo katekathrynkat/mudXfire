@@ -1,0 +1,66 @@
+---
+title: "Discharge"
+author: "Kate Culhane"
+date: "9/13/2019"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+
+# Load necessary packages
+
+library(tidyverse)
+
+# Load necessary data
+
+discharge_dat <- read_csv('discharge.csv')
+
+```
+
+Discharge calculation
+
+```{r}
+
+# EQUATION:
+
+# D = (w/20000)*(d1*v1/4 + d2*v2 + d3*v3/4)
+# w: cm
+# d: cm
+# v: m/s
+# D: m^3/s
+
+
+w <- test$width[1]
+d1 <- test$depth[1]
+d2 <- test$depth[2]
+d3 <- test$depth[3]
+v1 <- test$velocity[1]
+v2 <- test$velocity[2]
+v3 <- test$velocity[3]
+
+D <- (w/20000)*(d1*v1/4 + d2*v2 + d3*v3/4)
+
+### TEST WITH ARRHON UPSTREAM: 0.000713625
+
+test <- discharge_dat %>% 
+  filter(site == 'ARRHON',
+         location == 'up')
+
+### TEST WITH COLSPW UPSTREAM: 0.003115625
+
+test <- discharge_dat %>% 
+  filter(site == 'COLSPW',
+         location == 'up')
+
+
+
+
+```
+
