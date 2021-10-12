@@ -1,0 +1,89 @@
+site,date,unit,lat,long,unit_type,time,time_ysi,do_conc,do_percent,temp,clarity,length,width,min_width,depth,substrate1,substrate2,subtrate3,sediment1,sediment2,sediment3,dens_up,dens_down,dens_left,dens_right,amphibs,comments,description
+ARRHON,29-Aug-18,1,34.48568,120.14145,pool,9:48,,8.11,85.4,17.9,clear,1040,340,NA,66,MB,FP,CP,0,20,13,35,36,37,37,,,separated from lower; smaller pool by boulders - ends at cascade
+ARRHON,29-Aug-18,2,34.48524,120.14157,riff,10:06,,8.32,88.5,18.4,clear,245,80,35,6,SB,MP,MP,6,6,2,35,36,37,37,,,curves slightly to right; directly before unit 3 (pool)
+ARRHON,29-Aug-18,3,34.48525,120.1416,pool,10:16,,8.12,86.4,18.3,clear,620,505,NA,53,FP,MP,MB,12,0,0,36,36,37,36,,,directly after riff 2
+ARRHON,29-Aug-18,4,34.48559,120.14151,pool,10:55,,8.33,87.8,18.2,clear,560,455,NA,60,MB,CP,MP,9,0,18,27,37,34,35,Taricha in side pool,,has left side pool; begins after rock divide
+ARRHON,29-Aug-18,5,34.48569,120.14146,riff,11:10,,7.44,79.2,18.4,clear,490,25,90,11,SB,SB,SC,0,0,5,34,30,29,33,,,goes under fallen log
+ARRHON,29-Aug-18,6,34.48573,120.14133,riff,11:33,,7.57,80.7,18.5,clear,400,125,40,23,MB,SB,SB,0,2,0,34,32,34,36,,,almost chest high boulder on right
+ARRHON,29-Aug-18,7,34.48587,120.14133,pool,11:57,,6.2,63.3,18.3,clear,220,205,NA,44,MB,SB,LB,0,0,0,33,31,36,36,,,starts after almost vertical rock in center of stream
+ARRHON,29-Aug-18,8,34.48588,120.14123,riff,12:15,,7.83,84.4,19,clear,250,160,4,11,MB,LC,VCP,0,0,5,37,34,37,37,,,starts after unit 7 and small cascade
+COLSPE,20-Jun-18,1,34.45967,119.6546,riff,9:54,14:23,8.36,105.5,27.3,clear,2210,185,85,18.5,SC,VCP,VCP,0,0,0,14,3,9,23,TATO; PSCA tads,,long riffle starting at undercut root mass
+COLSPE,20-Jun-18,2,34.45988,119.65414,pool,11:10,14:27,7.91,99.8,27.2,clear,160,160,NA,23,FP,BR,VCP,1,3,0,12,1,18,20,PSCA tads,,oxbow pool at base of bedrock falls
+COLSPE,20-Jun-18,3,34.46,119.65407,pool,11:52,14:30,8.27,103.4,26.9,clear,200,335,NA,22,L,VCS,FP,10,5,0,9,9,16,27,PSCA tads EVERYWHERE,,pool flanked by riffs with bedrock outcrop on left
+COLSPE,20-Jun-18,4,34.46,119.65405,riff,12:00,14:32,8.14,101.5,26.7,clear,790,165,42,15,FP,SC,LC,0,0,0,12,8,23,32,TATO walking next to stream,,riff immediately upstream from unit 3; tiny seconary riff
+COLSPE,20-Jun-18,5,34.46032,119.654,riff,14:37,14:36,8.06,102.4,27.9,clear,900,175,60,14,LC,CP,BR,0,4,3,10,3,17,28,,,riff above secondary waterfall
+COLSPE,20-Jun-18,6,34.46038,119.65395,pool,14:54,14:40,7.84,98.8,27.3,clear,140,180,NA,31,VCP,LC,VCP,5,3.5,2,2,8,11,25,PSCA tads,,isolated pool; separate riff channel to right of pool with low flow
+COLSPE,20-Jun-18,7,34.46053,119.65385,riff,15:21,14:59,8.66,109.9,27.4,clear,1080,175,46,15,VCP,LC,CP,0,0,0,10,2,30,20,,,
+COLSPE,20-Jun-18,8,34.46069,119.65385,pool,15:21,14:40,7.84,99,27.3,clear,180,160,NA,31,SC,VCP,LC,4,5,5,10,8,21,20,,,
+COLSPW,10-Jul-18,1,34.46094,119.65527,riff,9:59,,8.55,103.3,24.9,clear,1880,75,8,10,SB,CP,MP,6,0,0,15,8,27,20,,,riffle below drone rock
+COLSPW,10-Jul-18,2,34.46104,119.6553,pool,10:27,,8.37,100.8,24.6,clear,130,80,NA,22,FP,SC,VCS,2.5,3,0,13,4,26,11,PSCA tran; Hyla tads,,pool below drone rock
+COLSPW,10-Jul-18,3,34.46118,119.65532,riff,10:48,,8.8,107.1,25.4,clear,1200,110,3,10,VCP,SB,MP,0,0,0,24,8,35,11,,,riffle starts at bb cascade above big cascade
+COLSPW,10-Jul-18,4,34.4613,11965536,riff,11:20,,7.97,98.7,26.9,clear,5200,105,2,16,CP,CP,VCP,0,0,0,16,13,29,10,Hyla tad,,separated from unit 3 by tiny pool at base of boulder on left
+COLSPW,10-Jul-18,5,34.46166,119.65513,pool,12:03,,9.05,115.5,28,clear,129,118,NA,13,CS,SC,CS,10,0,7,26,5,34,37,,,at base of waterfall
+COLSPW,10-Jul-18,6,34.46169,119.65519,riff,13:05,,7.25,100.4,32.7,clear,6550,110,14,14,SC,FP,CP,3,0,0,9,11,17,20,,,starts at waterfall; ends at shallow pool about 6 m downstream of fork
+COLSPW,10-Jul-18,7,34.46215,119.65532,pool,14:15,,7.37,100.3,31.9,clear,105,105,NA,13,LC,VCP,VCS,0,0,2,8,13,7,2,,,pool about 5 m below fork
+COLSPW,10-Jul-18,8,34.46249,119.65562,pool,14:32,,7.3,101.1,32.6,clear,120,110,NA,32,SB,M,LB,0,0,0,8,0,24,30,,,skinny pool between 2 boulders
+GOBERN,22-Aug-18,1,34.41018,119.46252,pool,10:11,,8.88,100.9,21.6,clear,165,70,NA,22,SB,F,CS,15,0,3,9,10,13,16,,,in front of cascade; shaded beneath a fallen log
+GOBERN,22-Aug-18,2,34.4102,119.46256,riff,10:30,,8.81,100.2,21.7,clear,5100,185,50,15,F,CS,SC,6.5,5,5.5,7,6,9,29,,,begins directly after log/cascade separating it from unit 1; ends at fork next to cliff
+GOBERN,22-Aug-18,3,34.41074,119.4622,pool,10:55,,8.97,101.7,22.2,clear,200,170,NA,22,F,CS,F,7.5,12,9,16,13,27,24,,,adjacent to boulder overhang
+GOBERN,22-Aug-18,4,34.41071,119.4622,riff,11:07,,10.35,123.6,24.2,clear,4930,280,40,15,F,CS,F,0,2,4,24,13,36,29,,,begins directly after unit 3; ends at glide beneath boulder
+GOBERN,22-Aug-18,5,34.41146,119.46182,pool,12:13,,11.12,141,27.6,clear,140,145,NA,30,F,SB,F,7,3.5,10,8,11,23,25,,,begins after riffle; ends at cascade
+GOBERN,22-Aug-18,6,34.41147,119.46185,riff,12:27,,11.41,147.2,28.5,clear,7050,170,25,17,F,F,MB,3,0,3.5,10,20,8,14,,,starst after cascade and pool; ending at unit 5
+GOBERN,22-Aug-18,7,34.4115,119.46261,pool,13:05,,9.29,121.6,29.3,clear,205,135,NA,33,F,F,SB,18,8.5,10,3,3,7,4,,,ends at waterfall
+GOBERN,22-Aug-18,8,34.41152,119.46264,riff,13:20,,9.72,128.9,29.9,clear,3800,185,30,15,F,SB,F,1,1,1,10,4,6,15,1 Hyla tad,,waterfall 2 mini; waterfall just past big boulder on left
+HOTSPR,03-Jul-18,1,34.45556,119.63873,pool,10:18,12:51,7.98,100.7,27.3,clear,180,75,NA,15,VCS,FP,VFP,15,16,3,13,4,20,27,HYLA tads,,weird pool below short cascade
+HOTSPR,03-Jul-18,2,34.45607,119.63862,riff,10:35,12:54,8.12,101.7,26.9,clear,890,95,15,12,MP,VFP,VFP,5,6,2,19,10,19,30,SA HYRE,,starts at shallow pool; ends at split
+HOTSPR,03-Jul-18,3,34.45636,119.63866,pool,10:57,12:59,7.58,96.3,27.9,mostly clear,125,140,NA,14,VCS,VFP,MP,10,5.5,11.5,27,15,19,33,HYLA tads,,pool at center of step-pool cascade (HYRE trans)
+HOTSPR,03-Jul-18,4,24.45653,119.63877,riff,11:50,13:04,8.09,104,28.4,mostly clear,645,140,35,10,MB,MP,LC,1,6,0,35,10,8,29,,,starts at cascade-ish section below big rock; ends before shallow pool just before trail
+HOTSPR,03-Jul-18,5,34.45683,119.63893,riff,12:33,13:09,8.19,104.2,27.8,clear,1250,95,10,15,MP,VCP,SC,4,4,2,20,9,21,32,HYLA tran + tads,,starts between two boulders; ends at cascade below glide
+HOTSPR,03-Jul-18,6,34.45703,119.63886,pool,13:35,13:12,7.61,96.6,27.3,clear,140,70,NA,17,M,M,LC,8,3,7,27,13,24,35,HYLA tads+ trans,,nestled between two huge boulders
+HOTSPR,03-Jul-18,7,34.45706,119.63883,riff,13:44,13:15,7.68,97.3,27.2,clear,3130,185,60,12,LC,VCP,VCP,3,2,0,18,15,13,21,,,starts at cascade into large boulders; ends at pool #8
+HOTSPR,03-Jul-18,8,34.4573,119.63879,pool,14:29,13:20,7.52,95.2,27.7,clear,205,225,NA,16,M,SB,SB,2,3,9,15,11,14,35,SA HYRE +HYCA; so many tads,,pool below first bedrock outcrop on left
+MARYGN,31-Jul-18,1,34.47678,119.79051,pool,10:51,,8.29,90.8,20,clear,1210,740,NA,108,BR,VCS,SC,0,73,4,23,31,33,24,HYLA tads,trout observed downstream of units,huge boulder on right side; glide feeds into pool
+MARYGN,31-Jul-18,2,34.47687,119.79053,riff,11:14,,8.43,93,20.3,clear,235,90,35,19,MB,SB,LC,0,0,0,6,32,35,3,,,begins right after BR glide
+MARYGN,31-Jul-18,3,34.47694,119.79055,riff,11:33,,8.16,90.3,20.6,clear,800,165,6,20,SC,MB,SB,0,0,3,23,29,37,36,,,the start is adjacent to a glide/pool; separated by rocks
+MARYGN,31-Jul-18,4,34.47701,119.79048,pool,11:52,,8.09,89.9,29.5,clear,255,155,NA,40,VFP,VCP,SC,18,0,4,34,28,30,33,HYLA tads,side pool,right side; under boulder/bedrock
+MARYGN,31-Jul-18,5,34.47704,119.7905,riff,13:03,,8.51,97.2,21.7,clear,500,215,25,7,LC,LC,SB,0,0,0,35,22,34,33,HYLA tads,,metal sack between trees on left
+MARYGN,31-Jul-18,6,34.47697,119.79037,pool,13:30,,7.17,82.2,22.2,clear,530,270,NA,47,CS,SC,SB,0,2,6,32,35,34,37,,,right behind boudler; stops at cascade
+MARYGN,31-Jul-18,7,34.47716,119.79036,pool,13:53,,8.78,101.1,22.7,clear,820,650,NA,81,LB,SB,MP,0,8,0,27,32,32,26,HYLA tads,,giant pool below waterfall
+MARYGN,31-Jul-18,8,34.47749,119.79037,riff,14:11,,9.2,107,23.1,clear,480,165,43,18,VCP,LC,SC,0,1,0,29,26,27,34,HYLA tads,,ends at glide+pool
+RATTLE,26-Jun-18,1,34.46425,119.68787,pool,10:22,10:04,4.86,52.2,18.3,clear,390,515,NA,56,SLL,VFP,L,24,9,0,36,33,37,33,1 HYLA tad; 1 taricha,,
+RATTLE,26-Jun-18,2,34.46437,119.68797,riff,11:08,NA,DRY,DRY,DRY,clear,155,65,15,10,VFP,LC,L,1,1,0,35,30,35,35,,,
+RATTLE,26-Jun-18,3,34.46448,119.6879,pool,11:40,NA,DRY,DRY,DRY,clear,505,415,NA,57,MP,VCF,L,9,0,5,35,35,35,36,1 taricha,,
+RATTLE,26-Jun-18,4,34.46466,119.68769,riff,13:14,NA,DRY,DRY,DRY,clear,150,130,80,19,LC,LC,L,0,1,0,32,37,36,36,,,
+RATTLE,26-Jun-18,5,34.46474,119.68768,pool,14:21,NA,DRY,DRY,DRY,clear,760,295,NA,48,MB,M,M,0,1,1,36,27,31,27,1 PSCA; 1 taricha,,
+RATTLE,26-Jun-18,6,34.46488,119.68749,pool,14:48,10:27,4.73,51.8,19.5,clear,365,400,NA,40,LC,M,LC,4,1,0,37,35,36,36,2 PSRE,,
+RATTLE,26-Jun-18,7,34.46506,119.68729,riff,15:26,10:42,1.71,18.3,18.6,clear,120,60,13,4,BR,BR,L,0,0,0,37,37,37,36,,,
+RATTLE,26-Jun-18,8,34.46532,119.68726,riff,15:45,NA,DRY,DRY,DRY,clear,150,50,25,10,LB,LB,LC,0,2,0,37,37,36,37,,,
+ROMERO,28-Jun-18,1,34.45907,119.59196,riff,10:39,10:00,9.1,102.4,21.3,clear,3800,190,40,25,SC,BR,VCP,0,0,0,5,31,20,5,HYRE (SA),,
+ROMERO,28-Jun-18,2,34.45936,119.5919,riff,11:24,10:05,8.98,101,21.2,clear,2550,130,45,31,CP,VCP,LC,0,0,0,10,3,21,10,,,
+ROMERO,28-Jun-18,3,34.45958,119.59182,pool,12:31,10:07,8.82,99.3,21.2,clear,90,150,NA,31,CP,MP,BR,0,0,0,14,9,36,13,,,
+ROMERO,28-Jun-18,4,34.45964,119.5918,riff,12:54,10:10,9.15,103.1,21.2,clear,520,105,25,18,MP,FP,SC,0,0,0,11,24,18,12,,,
+ROMERO,28-Jun-18,5,34.45971,119.59176,pool,13:18,10:13,8.81,97.8,21.1,clear,90,106,NA,23,MP,VP,MP,0,1,2.5,5,10,13,12,,,
+ROMERO,28-Jun-18,6,34.45981,119.5918,pool,13:52,10:15,8.62,97.2,21.1,clear,145,190,NA,21,FP,MP,CP,0,1.5,0,9,8,10,16,HYRE trans,,
+ROMERO,28-Jun-18,7,34.45981,119.59177,riff,14:09,10:20,8.72,98.1,21.2,clear,2700,185,65,12,MCP,VCP,SC,0,1,4,4,3,19,18,,,
+ROMERO,28-Jun-18,8,34.4602,119.59167,pool,14:52,10:23,9.11,102.8,21.3,clear,190,70,NA,25,MB,MP,MP,0,1,0,4,2,9,9,,,
+SANONO,22-Jul-18,1,34.47955,120.18935,riff,9:55,,6.85,72.4,18.4,clear,320,90,15,8,LC,MP,LC,0,0,0,33,36,37,35,,,
+SANONO,22-Jul-18,2,34.4796,120.18919,riff,10:31,,7.33,77.9,18.7,clear,420,150,17,9,MB,MP,SC,7,0,1,36,32,34,35,,,
+SANONO,22-Jul-18,3,34.47963,120.18921,pool,11:07,,7.3,77.3,18.9,clear,370,200,NA,36,VFP,FP,SB,0,11,0,33,32,30,35,HYLA TADS,,
+SANONO,22-Jul-18,4,34.47978,120.18918,riff,11:32,,7.25,79,19.6,clear,550,80,12,9,FP,LC,LB,0,1,2,35,28,30,35,,,
+SANONO,22-Jul-18,5,34.47999,120.18912,pool,12:30,,7.72,82.3,19.6,clear,520,240,NA,58,MB,MB,VFP,0,10,0,35,37,36,35,Adult TATO; HYLA tad,,
+SANONO,22-Jul-18,6,34.48008,120.18905,pool,13:20,,7.95,89.9,21.6,clear,450,320,NA,73,MB,LB,VFP,0,2,7,35,31,32,36,HYLA tad; adult TATO,,
+SANONO,22-Jul-18,7,34.48039,120.18905,riff,13:52,,7.16,81.1,21.8,clear,220,100,10,10,SB,CP,SB,2,0,0,32,31,33,36,,,
+SANONO,22-Jul-18,8,34.48057,120.18895,pool,14:22,,7.05,77.7,20.1,clear,365,260,NA,40,CS,VFP,LC,14,6,0,37,37,36,37,adult TATO,,
+SANROQ,12-Jul-18,1,34.46531,119.73139,pool,10:05,,5.2,55.7,19,clear,580,370,NA,45,M,M,SB,0,18,5,32,35,32,33,tads,,
+SANROQ,12-Jul-18,2,34.4654,119.73132,riff,10:20,,6.35,68.5,19.1,clear,450,130,10,16,SB,MP,LC,0,2,0,33,34,36,34,tads,,
+SANROQ,12-Jul-18,3,34.46543,119.73129,pool,10:48,,5.85,63.7,19.2,clear,200,185,NA,25,SB,M,SC,2,0,0,33,35,33,32,tads; HYRE tran,,
+SANROQ,12-Jul-18,4,34.46552,119.73121,pool,11:40,,3.61,39,19.5,clear,550,250,NA,57,MB,M,M,0,10,4,35,31,36,35,tads,,large pool to right of 3 boulders; separating it from other pool
+SANROQ,12-Jul-18,5,34.46556,119.73124,riff,12:05,,6.76,74,19.9,clear,530,110,4,10,SB,LC,SC,0,0,1,34,37,36,35,,,
+SANROQ,12-Jul-18,6,34.46556,119.73124,pool,12:48,,6.86,73.4,19.5,clear,610,470,NA,45,MP,M,M,11,10,10,33,36,36,35,tads,,
+SANROQ,12-Jul-18,7,34.46564,119.73126,riff,13:18,,6,66.4,20.1,clear,180,70,10,8,SB,LC,CP,2,0,0,30,31,35,33,,,
+SANROQ,12-Jul-18,8,34.46584,119.73129,riff,13:23,,5.24,56.1,19.7,clear,440,100,10,10,SB,M,MB,0,0,2.5,30,34,30,25,,,
+SANYSI,16-Jul-18,1,34.45344,119.6226,pool,10:20,,8.29,94.6,21.9,clear,180,120,NA,28,VCS,CS,VCP,3,2,0,9,5,7,30,HYLA tads; SA HYRE; PSCA trans,,infinity hape pool across from horizontal cut
+SANYSI,16-Jul-18,2,34.45383,119.62253,pool,10:33,,8.03,93.1,22.7,clear,220,100,NA,30,FP,F,M,0,0,2,0,0,9,27,HYRE SA; HYLA tads,,huge pool; partially under boulder overhang
+SANYSI,16-Jul-18,3,34.45386,119.62257,riff,11:49,,9.11,109.5,24.7,clear,2750,305,25,31,MP,FP,VCS,1.5,0,8,0,3,11,16,subadult HYRE,,starts above cascade directly above unit #2
+SANYSI,16-Jul-18,4,34.45424,119.62282,riff,12:29,,9.35,115.9,26.3,clear,1730,200,40,15,CP,SC,VCP,0,0,0,9,4,8,21,subadult HYRE,,starts after small pool; flows over boulder
+SANYSI,16-Jul-18,5,34.45439,119.62312,pool,13:33,,8.95,113.7,27.4,clear,200,180,NA,35,BR,BR,M,4,0,0,0,0,5,15,subadult + adult HYRE,,parallel to giant boulder overhang
+SANYSI,16-Jul-18,6,34.45439,119.62312,riff,13:40,,8.44,106.3,27.4,clear,2300,247,45,28,SC,VCP,VCP,0,1,0,10,2,12,20,suabdult + adult HYRE,,ends at pool #7
+SANYSI,16-Jul-18,7,34.45447,119.6233,pool,14:10,,8.05,102,27.5,clear,140,120,NA,22,CP,SC,LC,0,3,0,14,0,17,18,,,last pool in series before long riffle + glide combo
+SANYSI,16-Jul-18,8,34.45451,119.62432,riff,14:18,,7.84,99,27.4,clear,1800,185,10,36,SB,CP,MP,0,0,0,6,0,16,25,,,right after glide that is along giant boulder

@@ -20,7 +20,7 @@ library(tidyverse)
 
 # Load necessary data
 
-discharge_dat <- read_csv('discharge.csv')
+discharge_dat <- read_csv('../raw_data/field_data/discharge.csv')
 
 ```
 

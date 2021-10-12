@@ -1,0 +1,73 @@
+---
+title: "Map"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = '..')
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+
+```{r}
+
+# Load necessary packages
+
+library(tidyverse)
+library(sf)
+
+
+
+# Load spatial data
+
+sites_df <- read_csv('raw_data/spatial_data/site_coords.csv')
+
+
+library(raster) # for raster work
+library(rgdal) # for vector work (includes 'sp')
+library(sf)
+library(ggspatial)
+library(mapview)
+library(spatialEco) # for several landscape metrics
+library(geosphere)
+library(rgeos) # gDistance function
+
+# Update functions
+
+select <- dplyr::select
+summarize <- dplyr::summarize
+rename <- dplyr::rename
+
+# Load necessary data
+
+site_meta <- read_csv('raw_data/field_data/site_metadata.csv') %>% 
+  mutate(severity = factor(severity, levels = c('unb', 'mod', 'high')))
+
+# Load spatial data
+
+sites_dat <- read_csv('raw_data/spatial_data/site_coords.csv')
+
+# MTBS data
+
+mtbs_info <- GDALinfo('raw_data/spatial_data/ca3878212060420140913_20130730_20150805_dnbr6.tif') # metadata
+mtbs_raster <- raster('raw_data/spatial_data/ca3878212060420140913_20130730_20150805_dnbr6.tif') # burn severity
+bndy_shp <- readOGR(dsn = 'raw_data/spatial_data',
+                    layer = 'ca3878212060420140913_20130730_20150805_burn_bndy') # burn boundary
+
+# LANDFIRE data
+
+vvc_landfire <- raster("raw_data/spatial_data/vcc/hdr.adf") # vegetation condition classes
+vcc_raster <- projectRaster(vvc_landfire, crs=crs(mtbs_raster))
+
+evt_landfire <- raster("raw_data/spatial_data/evt_2012/hdr.adf") # existing vegetation type
+evt_raster <- projectRaster(evt_landfire, crs=crs(mtbs_raster))
+evc_landfire <- raster("raw_data/spatial_data/evc_2012/hdr.adf") # existing vegetation cover
+evc_raster <- projectRaster(evc_landfire, crs=crs(mtbs_raster))
+
+evt_landfire2 <- raster("raw_data/spatial_data/evt_2014/hdr.adf") # existing vegetation type
+evt_raster2 <- projectRaster(evt_landfire2, crs=crs(mtbs_raster))
+evc_landfire2 <- raster("raw_data/spatial_data/evc_2014/hdr.adf") # existing vegetation cover
+evc_raster2 <- projectRaster(evc_landfire2, crs=crs(mtbs_raster))
+
+```
+

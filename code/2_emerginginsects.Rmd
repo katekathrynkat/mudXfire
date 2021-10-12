@@ -1,0 +1,174 @@
+---
+title: "Emerging Insects"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = '..')
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.width=5, fig.height=3)
+```
+
+```{r}
+
+# Load packages
+library(tidyverse)
+
+# Load data
+meta <- read_csv('raw_data/field_data/site_info.csv')
+emerge <- read_csv('raw_data/field_data/emerginginsect_abundance.csv') %>% 
+  full_join(meta) %>% 
+  mutate(treatment = factor(treatment, levels = c('unburned', 'burned')),
+         density = count/0.5,
+         group = factor(paste(treatment, unit_type),
+                        levels = c('unburned pool', 'unburned riffle',
+                                   'burned pool', 'burned riffle')),
+         log = log(density)) %>% 
+  filter(log!='-Inf')
+
+area <- read_csv('output_data/stream_area.csv')
+
+```
+
+###Density
+
+```{r}
+
+ggplot(emerge, aes(x = treatment, y = density, color = treatment)) +
+  geom_jitter() +
+  theme_classic() +
+  scale_color_manual(values = c('darkgreen', 'orange')) +
+  scale_y_continuous(trans = 'log10', expand = c(0,0)) +
+  theme_classic() +
+  theme(legend.position = 'none') +
+  labs(x = '', y = bquote('Density (indv/'~m^2~')'))
+
+emerge_summary <- emerge %>% 
+  group_by(treatment) %>% 
+  summarize(mean = mean(density),
+            sd = sd(density),
+            se = sd(density)/sqrt(length(density)))
+
+ggplot(emerge_summary, aes(x = treatment, y = mean, fill = treatment)) +
+  geom_col() +
+  scale_fill_manual(values = c('darkgreen', 'orange')) +
+  geom_errorbar(aes(min = mean-se, max = mean+se), width = 0.2) +
+  scale_y_continuous(trans = 'log10', expand = c(0,0)) +
+  theme_classic() +
+  theme(legend.position = 'none') +
+  labs(x = '', y = bquote('Density (indv/'~m^2~')'))
+
+```
+
+###Density per unit type
+
+```{r}
+
+type_summary <- emerge %>% 
+  group_by(group, treatment, unit_type) %>% 
+  summarize(mean = mean(density),
+            sd = sd(density),
+            se = sd(density)/sqrt(length(density))) 
+
+ggplot(type_summary, aes(x = group, y = mean, fill = treatment)) +
+  geom_col() +
+  scale_fill_manual(values = c('darkgreen', 'orange')) +
+  geom_errorbar(aes(min = mean-se, max = mean+se), width = 0.2) +
+  scale_y_continuous(trans = 'log10', expand = c(0,0)) +
+  scale_x_discrete(labels = c('Unburned\npool', 'Unburned\nriffle',
+                              'Burned\npool', 'Burned\nriffle')) +
+  theme_classic() +
+  theme(legend.position = 'none') +
+  labs(x = '', y = bquote('Density (indv/'~m^2~')'))
+
+# ANOVA
+
+type_aov <- aov(data = emerge, log ~ group)
+summary(type_aov)
+# F = 13.3, p < 0.01
+TukeyHSD(type_aov)
+
+```
+
+###Whole stream
+
+```{r}
+
+emerge_area <- area %>%
+  filter(unit_type=='riffle' | unit_type=='pool') %>% 
+  full_join(emerge) %>% 
+  mutate(per_type = count/0.5*total_area)%>% 
+  group_by(treatment, site, trap) %>% 
+  summarize(density = sum(per_type)/sum(total_area)) %>% 
+  mutate(log = log(density))
+
+ggplot(emerge_area, aes(x = treatment, y = density, color = treatment)) +
+  geom_jitter() +
+  theme_classic() +
+  scale_color_manual(values = c('darkgreen', 'orange')) +
+  scale_y_continuous(trans = 'log10', expand = c(0,0)) +
+  theme_classic() +
+  theme(legend.position = 'none') +
+  labs(x = '', y = 'Emerging Insect Density (indv/m^2)')
+  
+area_summary <- emerge_area %>% 
+  group_by(treatment) %>% 
+  summarize(mean = mean(density),
+            sd = sd(density),
+            se = sd(density)/sqrt(length(density)))
+
+ggplot(area_summary, aes(x = treatment, y = mean, fill = treatment)) +
+  geom_col(alpha = 0.5, color = 'grey30') +
+  scale_fill_manual(values = c('darkgreen', 'orange')) +
+  geom_errorbar(aes(min = mean-se, max = mean+se), width = 0.2) +
+  scale_y_continuous(trans = 'log10', expand = c(0,0)) +
+  scale_x_discrete(labels = c('Unburned', 'Burned')) +
+  theme_classic() +
+  theme(legend.position = 'none') +
+  labs(x = '', y = bquote('Density (indv/'~m^2~')'))
+
+t.test(emerge_area$log ~ emerge_area$treatment)
+# t = -4.7968, p = 0.0002292
+
+```
+
+###Contribution along 100m reach by unit type
+
+```{r}
+
+emerge_area_type <- area %>%
+  filter(unit_type=='riffle' | unit_type=='pool') %>% 
+  full_join(emerge) %>% 
+  mutate(per_type = count/0.5*total_area)%>% 
+  group_by(treatment, site, trap, unit_type) %>% 
+  mutate(log = log(per_type),
+         group = factor(paste(treatment, unit_type),
+                        levels = c('unburned pool', 'unburned riffle',
+                                   'burned pool', 'burned riffle')))
+
+area_type_summary <- emerge_area_type %>% 
+  group_by(group, treatment, unit_type) %>% 
+  summarize(mean = mean(per_type),
+            sd = sd(per_type),
+            se = sd(per_type)/sqrt(length(per_type)))
+
+ggplot(area_type_summary, aes(x = treatment, y = mean, fill = treatment, alpha = unit_type)) +
+  geom_col(position = 'stack') +
+  scale_fill_manual(values = c('darkgreen', 'orange')) +
+  geom_errorbar(aes(min = mean-se, max = mean+se), width = 0.2) +
+  scale_y_continuous(trans = 'log10', expand = c(0,0)) +
+  scale_x_discrete(labels = c('Unburned pool', 'Unburned riffle',
+                              'Burned pool', 'Burned riffle')) +
+  theme_classic() +
+  theme(legend.position = 'none') +
+  labs(x = '', y = 'Emerging Insect Abundance')
+
+area_type_aov <- aov(data = emerge_area_type, log ~ group)
+
+```
+
+```{r eval=FALSE}
+
+rmarkdown::render('code/2_emerginginsects', output_file = '../docs/2_emerginginsects.html')
+
+```

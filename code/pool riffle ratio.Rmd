@@ -1,0 +1,131 @@
+---
+title: "Pool-Riffle Ratio"
+author: "Kate Culhane"
+date: "October 8, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = '..')
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.width=5, fig.height=3)
+```
+
+##Packages needed:
+
+- tidyverse
+
+##Data:
+
+- "ratio_data.csv"
+- "unit_data.csv"
+
+```{r include=FALSE}
+library(tidyverse)
+ratio_data <- read_csv('raw_data/field_data/ratio_data.csv')
+unit_data <- read_csv('raw_data/field_data/unit_data.csv')
+```
+
+##Clean the data
+
+###Fill missing unit data
+
+Since we didn't measure the study unit dimensions while measuring pool-riffle ratio, we need to replace missing values in "ratio_data" labeled "UNIT" with the corresponding measurements from "unit_data".
+
+```{r}
+ratio <- left_join(ratio_data, unit_data, by = c("site", "unit")) %>% 
+  mutate(length = ifelse(length.x=='UNIT', length.y, length.x)) %>% 
+  mutate(width = ifelse(width.x=='UNIT', width.y, width.x)) %>% 
+  mutate(min_width = ifelse(min_width.x=='UNIT', min_width.y, min_width.x)) %>% 
+  mutate(depth = ifelse(depth.x=='UNIT', depth.y, depth.x)) %>% 
+  rename(unit_type = unit_type.x) %>% 
+  select(site, meter, unit, unit_type, length, width, min_width, depth)
+```
+
+###Update classes
+
+```{r}
+ratio$length <- as.numeric(ratio$length)
+ratio$width <- as.numeric(ratio$width)
+ratio$min_width <- as.numeric(ratio$min_width)
+ratio$depth <- as.numeric(ratio$depth)
+ratio$unit_type <- as.factor(ratio$unit_type)
+ratio$site <- as.factor(ratio$site)
+ratio$site <- ordered(ratio$site, levels = c('SANONO', 'ARRHON', 'MARYGN', 'SANROQ', 'RATTLE', 'COLSPW', 'COLSPE', 'HOTSPR', 'SANYSI', 'ROMERO', 'GOBERN' ))# change order of sites to be geographic instead of alphabetic
+```
+
+##Calculate areas
+
+**Pool:** area of an ellipse
+
+$A = \frac {\pi * length * width} {4}$
+
+**Riffle/glide:** area of a trapezoid
+
+$A = \frac {minwidth + width} {2} * length$
+
+**Cascade:** area of a trapezoid using modified length (hypotenuse of length and depth)
+
+$hypotenuse = \sqrt {length^2 * depth^2}$
+
+$A = \frac {minwidth + width} {2} * hypotenuse$
+
+```{r}
+# calculate area (in cm^2) for each unit type in separate columns
+calculate_area <- ratio %>% 
+  mutate(area_pool = (pi * length * width)/4) %>% 
+  mutate(area_riffle = ((min_width + width) / 2) * length) %>% 
+  mutate(area_glide = ((min_width + width) / 2) * length) %>% 
+  mutate(hypotenuse = sqrt(length^2 + depth^2)) %>% 
+  mutate(area_cascade = ((min_width + width) / 2) * hypotenuse)
+# combine area columns based on unit type
+area <- calculate_area %>% 
+  mutate(area = ifelse(unit_type=='pool', area_pool, NA)) %>% 
+  mutate(area = ifelse(unit_type=='riffle', area_riffle, area)) %>% 
+  mutate(area = ifelse(unit_type=='glide', area_glide, area)) %>% 
+  mutate(area = ifelse(unit_type=='cascade', area_cascade, area)) %>% 
+  mutate(area = area / 10000) %>% # convert to area in m^2
+  filter(unit_type != 'underground') %>% # remove units that are underground
+  select(site, unit_type, area)
+```
+
+##Sum areas by unit type for each site
+
+```{r}
+sums <- area %>% 
+  group_by(site, unit_type) %>% 
+  summarize(total_area = sum(area)) %>% # total area for each unit type
+  mutate(decimal_area = total_area/sum(total_area)) %>%  # proportional area for each unit type
+  mutate(percent_area = decimal_area*100) # convert to percent
+```
+
+##Make a bar graph
+
+```{r}
+cols <- c('cascade' = 'cadetblue4', 'glide' = 'cadetblue3', 'pool' = 'darkblue', 'riffle' = 'cyan')
+labs <- c('Cascade', 'Glide', 'Pool', 'Riffle')
+ratio_plot <- ggplot(sums,
+                     aes(x = site, y = percent_area,
+                         fill = unit_type)) +
+  geom_bar(stat='identity') +
+  scale_fill_manual(labels = labs, values = cols) +
+  theme_bw() +
+  labs(y = 'Proportional Area', fill = '') +
+  theme_minimal() +
+  theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.title.y = element_blank())
+ratio_plot
+ggsave('poolriffleratio.png',
+       units = 'cm',
+       width = 8,
+       height = 4)
+```
+
+```{r}
+
+write_csv(sums, 'output_data/stream_area.csv')
+
+```
+

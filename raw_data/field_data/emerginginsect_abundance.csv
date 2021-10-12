@@ -1,0 +1,45 @@
+site,date,trap,unit_type,count,comments
+ARRHON,28-Aug-18,1,pool,3,plus 1 ant
+ARRHON,28-Aug-18,2,pool,9,
+ARRHON,28-Aug-18,1,riffle,50,
+ARRHON,28-Aug-18,2,riffle,68,
+ROMERO,04-Sep-18,1,pool,125,
+ROMERO,04-Sep-18,2,pool,20,
+ROMERO,04-Sep-18,1,riffle,42,
+ROMERO,04-Sep-18,2,riffle,50,
+COLSPE,28-Aug-18,1,pool,293,
+COLSPE,28-Aug-18,2,pool,49,
+COLSPE,28-Aug-18,1,riffle,160,
+COLSPE,28-Aug-18,2,riffle,136,
+GOBERN,23-Aug-18,1,pool,13,
+GOBERN,23-Aug-18,2,pool,197,
+GOBERN,23-Aug-18,1,riffle,29,
+GOBERN,23-Aug-18,2,riffle,190,
+MARYGN,05-Jul-18,1,pool,5,
+MARYGN,05-Jul-18,2,pool,3,plus 1 spider
+MARYGN,05-Jul-18,1,riffle,42,
+MARYGN,05-Jul-18,2,riffle,47,plus 1 spider
+SANONO,20-Jul-18,1,pool,2,plus 1 ant
+SANONO,20-Jul-18,2,pool,3,
+SANONO,20-Jul-18,1,riffle,26,
+SANONO,20-Jul-18,2,riffle,8,
+RATTLE,15-Jul-18,1,pool,2,
+RATTLE,15-Jul-18,2,pool,26,
+RATTLE,15-Jul-18,1,riffle,2,
+RATTLE,15-Jul-18,2,riffle,9,
+SANROQ,12-Jul-18,1,pool,0,
+SANROQ,12-Jul-18,2,pool,2,
+SANROQ,12-Jul-18,1,riffle,4,
+SANROQ,12-Jul-18,2,riffle,4,
+SANYSI,16-Jul-18,1,pool,58,
+SANYSI,16-Jul-18,2,pool,23,
+SANYSI,16-Jul-18,1,riffle,70,
+SANYSI,16-Jul-18,2,riffle,15,
+HOTSPR,04-Jul-18,1,pool,21,plus 1 spider
+HOTSPR,04-Jul-18,2,pool,47,
+HOTSPR,04-Jul-18,1,riffle,21,
+HOTSPR,04-Jul-18,2,riffle,69,plus 1 spider
+COLSPW,10-Jul-18,1,pool,10,
+COLSPW,10-Jul-18,2,pool,89,plus 1 ant and spider silk
+COLSPW,10-Jul-18,1,riffle,17,plus 1 spider
+COLSPW,10-Jul-18,2,riffle,28,
